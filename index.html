@@ -1,6 +1,367 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
+<head>
+    <!-- Meta Viewport & Charset -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Title & Meta Description Otimizadas -->
+    <title>Astin - ผลิตภัณฑ์เสริมอาหารเพื่อสุขภาพ | สั่งซื้อเลย</title>
+    <meta name="description" content="Astin ผลิตภัณฑ์เสริมอาหารเพื่อสุขภาพ สั่งซื้อ Astin ในราคาพิเศษ 990 THB พร้อมบริการเก็บเงินปลายทาง (COD) จัดส่งฟรีทั่วประเทศไทย">
+    <meta name="keywords" content="astin, ผลิตภัณฑ์เสริมอาหาร, สุขภาพ, ความดัน, อาหารเสริมสุขภาพ, ประเทศไทย">
+    
+    <!-- Robots & Referrer Policy -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <!-- Canonical & Hreflang (Foco Tailândia) -->
+    <link rel="canonical" href="https://astin-ten.vercel.app/">
+    <link rel="alternate" hreflang="th-TH" href="https://astin-ten.vercel.app/">
+    <link rel="alternate" hreflang="x-default" href="https://astin-ten.vercel.app/">
+    
+    <!-- Open Graph (Facebook, Line, WhatsApp) -->
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Astin - ผลิตภัณฑ์เสริมอาหารเพื่อสุขภาพ">
+    <meta property="og:description" content="สั่งซื้อ Astin ในราคาพิเศษ 990 THB พร้อมบริการเก็บเงินปลายทาง (COD) ดูแลสุขภาพของคุณตั้งแต่วันนี้">
+    <meta property="og:url" content="https://astin-ten.vercel.app/">
+    <meta property="og:image" content="https://astin-ten.vercel.app/astin.produto+estetoscopio.jpg">
+    <meta property="og:site_name" content="Astin">
+    <meta property="og:locale" content="th_TH">
+    
+    <!-- Tags de Performance & DNS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preload" as="image" href="astin.produto+estetoscopio.jpg">
+    
+    <!-- CSS Existente (MANTIDO EXATAMENTE IGUAL) -->
+    <style>
+        :root {
+            --primary-red: #A01A1C; 
+            --accent-red: #D32F2F; 
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-body: #F5F5F5;
+            --bg-card: #FFFFFF;
+            --discount-bg: #FFF3CD;
+            --discount-text: #856404;
+            --cod-color: #2E7D32; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .product-container {
+            background-color: var(--bg-card);
+            max-width: 900px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product-image-section {
+            flex: 1 1 400px;
+            padding: 40px;
+            background-color: #FAFAFA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #EEEEEE;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .astin-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .product-details {
+            flex: 1 1 400px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--primary-red);
+            margin-bottom: 5px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .price-section {
+            margin-bottom: 25px;
+            padding: 20px 0;
+            border-top: 1px solid #EEEEEE;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: var(--discount-bg);
+            color: var(--discount-text);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999999;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .new-price {
+            font-size: 3em;
+            color: var(--primary-red);
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .currency {
+            font-size: 0.5em;
+            vertical-align: super;
+            color: var(--text-gray);
+        }
+
+        .cod-notice {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            color: var(--cod-color);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .cod-notice::before {
+            content: '📦';
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-red);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 18px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #B71C1C;
+            transform: translateY(-2px);
+        }
+
+        .disclaimer {
+            margin-top: 25px;
+            font-size: 0.85em;
+            color: #888888;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .site-footer {
+            margin-top: 15px;
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 0.85em;
+            color: #999999;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+            .product-image-section {
+                padding: 30px 20px;
+                border-right: none;
+                border-bottom: 1px solid #EEEEEE;
+            }
+            .product-details {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            .new-price {
+                font-size: 2.5em;
+            }
+            .footer-links {
+                gap: 15px;
+            }
+        }
+    </style>
+
+    <!-- JSON-LD: Website, Product, Offer (com Prazos e Devolução) e FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://astin-ten.vercel.app/#website",
+          "url": "https://astin-ten.vercel.app/",
+          "name": "Astin",
+          "inLanguage": "th-TH"
+        },
+        {
+          "@type": "Product",
+          "@id": "https://astin-ten.vercel.app/#product",
+          "name": "Astin",
+          "image": "https://astin-ten.vercel.app/astin.produto+estetoscopio.jpg",
+          "description": "Astin ผลิตภัณฑ์เสริมอาหารเพื่อสุขภาพ สั่งซื้อ Astin ในราคาพิเศษ 990 THB พร้อมบริการเก็บเงินปลายทาง (COD)",
+          "brand": {
+            "@type": "Brand",
+            "name": "Astin"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://astin-ten.vercel.app/",
+            "priceCurrency": "THB",
+            "price": "990",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "TH",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": "14",
+              "returnMethod": "https://schema.org/ReturnByMail"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "THB"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "TH"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "d"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 3,
+                  "unitCode": "d"
+                }
+              }
+            }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Astin คืออะไร?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Astin เป็นผลิตภัณฑ์เสริมอาหารเพื่อสุขภาพที่ดูแลร่างกายด้วยสารสกัดธรรมชาติ"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "ราคาของ Astin คือเท่าไหร่?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ขณะนี้ Astin มีโปรโมชั่นพิเศษ ลดเหลือเพียง 990 THB พร้อมบริการเก็บเงินปลายทาง (COD)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astin - ผลิตภัณฑ์เสริมอาหาร</title>
