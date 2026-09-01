@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astin - ผลิตภัณฑ์เสริมอาหาร</title>
+    <style>
+        :root {
+            --primary-red: #A01A1C; 
+            --accent-red: #D32F2F; 
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-body: #F5F5F5;
+            --bg-card: #FFFFFF;
+            --discount-bg: #FFF3CD;
+            --discount-text: #856404;
+            --cod-color: #2E7D32; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .product-container {
+            background-color: var(--bg-card);
+            max-width: 900px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product-image-section {
+            flex: 1 1 400px;
+            padding: 40px;
+            background-color: #FAFAFA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #EEEEEE;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .astin-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .product-details {
+            flex: 1 1 400px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--primary-red);
+            margin-bottom: 5px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .price-section {
+            margin-bottom: 25px;
+            padding: 20px 0;
+            border-top: 1px solid #EEEEEE;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: var(--discount-bg);
+            color: var(--discount-text);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999999;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .new-price {
+            font-size: 3em;
+            color: var(--primary-red);
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .currency {
+            font-size: 0.5em;
+            vertical-align: super;
+            color: var(--text-gray);
+        }
+
+        .cod-notice {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            color: var(--cod-color);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .cod-notice::before {
+            content: '📦';
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-red);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 18px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #B71C1C;
+            transform: translateY(-2px);
+        }
+
+        /* --- CSS DO AVISO LEGAL --- */
+        .disclaimer {
+            margin-top: 25px;
+            font-size: 0.85em;
+            color: #888888;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        /* --- CSS DO RODAPÉ --- */
+        .site-footer {
+            margin-top: 15px;
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 0.85em;
+            color: #999999;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+            .product-image-section {
+                padding: 30px 20px;
+                border-right: none;
+                border-bottom: 1px solid #EEEEEE;
+            }
+            .product-details {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            .new-price {
+                font-size: 2.5em;
+            }
+            .footer-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="product-container">
+        
+        <!-- SEÇÃO DA IMAGEM DO PRODUTO -->
+        <section class="product-image-section">
+            <div class="image-placeholder">
+                <img src="astin.produto+estetoscopio.jpg" alt="Astin - ผลิตภัณฑ์เสริมอาหารเพื่อสุขภาพ" class="astin-img">
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE DETALHES E COMPRA (FUNDO DE FUNIL) -->
+        <section class="product-details">
+            
+            <h1>Astin</h1>
+            <p class="subtitle">ผลิตภัณฑ์เสริมอาหารเพื่อสุขภาพ</p>
+
+            <div class="price-section">
+                <div class="discount-badge">ประหยัด 50%</div>
+                <div>
+                    <span class="old-price">1,980 THB</span>
+                    <span class="new-price">990<span class="currency">THB</span></span>
+                </div>
+            </div>
+
+            <div class="cod-notice">
+                บริการเก็บเงินปลายทาง (จ่ายเงินเมื่อรับสินค้า)
+            </div>
+
+            <!-- BOTÃO DE RESERVA -->
+            <a href="https://d3fy9.doctorazlab.com/l/?sub1={gclid}" class="cta-button">
+                สั่งซื้อเลย
+            </a>
+
+        </section>
+    </main>
+
+    <!-- DISCLAIMER DE CONFORMIDADE GOOGLE ADS -->
+    <p class="disclaimer">
+        ข้อจำกัดความรับผิดชอบ: ผลิตภัณฑ์นี้เป็นผลิตภัณฑ์เสริมอาหาร ไม่ใช่ยารักษาโรค ผลลัพธ์ที่ได้อาจแตกต่างกันไปในแต่ละบุคคล โปรดอ่านคำเตือนบนฉลากก่อนบริโภค
+    </p>
+
+    <!-- RODAPÉ GOOGLE ADS COMPLIANCE -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="#privacy-policy">นโยบายความเป็นส่วนตัว</a> 
+            <a href="#terms">ข้อกำหนดและเงื่อนไข</a> 
+            <a href="#contact">ติดต่อเรา</a> 
+        </div>
+        <p class="copyright">© 2026 Astin. สงวนลิขสิทธิ์ทั้งหมด.</p> 
+    </footer>
+
+</body>
+</html>
